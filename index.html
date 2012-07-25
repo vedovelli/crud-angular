@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AngularJS</title>
+		<meta charset="utf-8">
+	</head>
+	<body ng-app ng-controller="TesteCtrl">
+
+		<h1>Bem vindos ao screencast AngularJS</h1>
+
+		<form>
+			
+			<input type="hidden" value="0" ng-model="unidade.id">
+			<label>Title</label>
+			<input type="text" ng-model="unidade.title">
+			<label>Category</label>
+			<input type="text" ng-model="unidade.category">
+			<label>Google ID</label>
+			<input type="text" ng-model="unidade.google_id">
+			<input type="submit" ng-click="salvar()">
+
+		</form>
+
+		<table id="lista_produtos" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Title</th>
+					<th>Category</th>
+					<th>Google ID</th>
+					<th>#</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="un in lista">
+					<td>{{un.id}}</td>
+					<td>{{un.title}}</td>
+					<td>{{un.category}}</td>
+					<td>{{un.google_id}}</td>
+					<td>[ <a href="#" ng-click="editar(un)">editar</a> | <a href="#" ng-click="excluir(un)">excluir</a> ]</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/angular-1.0.1.min.js"></script>
+		<script type="text/javascript" src="js/custom.js"></script>
+
+	</body>
+</html>
